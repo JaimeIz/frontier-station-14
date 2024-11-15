@@ -1,0 +1,45 @@
+
+- type: entity
+  parent: BasePlushie
+  id: MarlynPlushie
+  name: plushie of Marlyn
+  description: An adorable stuffed toy that resembles a very cute silly goober. Treat her with care!"
+  components:
+  - type: Sprite
+    sprite: _SillyIdeas/Objects/Fun/toys.rsi
+    state: marlyn_front
+  # - type: Sprite
+  #   state: plushie_lizard
+  - type: EmitSoundOnUse
+    sound:
+      collection: FelinidMews
+  - type: EmitSoundOnActivate
+    sound:
+      collection: FelinidPurrs
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: FelinidMeows
+  - type: EmitSoundOnCollide
+    sound:
+      collection: FelinidScreams
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_scream1.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_scream1.ogg
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceThatMakesYouWeh
+        Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: JuiceThatMakesYouWeh
+          Quantity: 10
